@@ -1,6 +1,6 @@
 <header>
 	<title>Another one</title>
-	<link rel "stylesheet" href = "page2style.css">
+	<link rel "stylesheet" href = "page2style.css">	
 </header>
 <html>
 <head>
@@ -29,37 +29,23 @@ p {
     transform: translate(50%,50%);
     position: absolute;
 }
-.hide
-{
-    opacity:0;
-}
-.show
-{
-    opacity:1!important;
-}
-
 </style>
 <script>
-	$(document).ready(function() {
-    $(window).scroll( function(){
-        $('.hide').each( function(i){
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            if( bottom_of_window > bottom_of_object ){
-                $(this).addClass('show');
-            }
-            if( bottom_of_window < bottom_of_object ){
-                $(this).removeClass('show');
-            }
-        });
-    });
-});
+function nfade() {
+	document.getElementById('main').style.opacity = '0';
+}
 </script>
-<head>
+</head>
 <body>
 <div id = "main" class = "center">
 	<h1> Welcome to page 2! </h1>
+	<p>I had a lot of big ideas for this page and then found myself in a time crunch..</p>
+	<p>I had a fun time learning about how to make the background take up the right amount of window space regardless of what size your browser window is. Feel free to remove all this text by pressing the button and stretch this window around to test my code!</p>
+	<p><a href="index.html">Click here to go back to the main page</a>
+	<br>
+	<br> 
+	<button onclick="nfade()">Clean up</button>
+	</p>
 </div>
 </body>
 </html>
-
