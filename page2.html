@@ -22,13 +22,43 @@ p {
 	text-align: center;
 	color: #f7e6f6;
 }
+.center 
+{
+    right: 50%;
+    bottom: 70%;
+    transform: translate(50%,50%);
+    position: absolute;
+}
+.hide
+{
+    opacity:0;
+}
+.show
+{
+    opacity:1!important;
+}
+
 </style>
+<script>
+	$(document).ready(function() {
+    $(window).scroll( function(){
+        $('.hide').each( function(i){
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            if( bottom_of_window > bottom_of_object ){
+                $(this).addClass('show');
+            }
+            if( bottom_of_window < bottom_of_object ){
+                $(this).removeClass('show');
+            }
+        });
+    });
+});
+</script>
 <head>
 <body>
-<div id = main">
+<div id = "main" class = "center">
 	<h1> Welcome to page 2! </h1>
-	<p> There's nothing to do here, but you can press the button down here to get back to the main page </p>
-	<p> heres a</p> <a href="index.html"link>
 </div>
 </body>
 </html>
