@@ -1,0 +1,40 @@
+<html>
+<style>
+</style>
+<head>
+	<title>Music!</title>
+	<link rel="stylesheet" href="nickstyle.css">
+<script>
+	var songs = [
+		{"Title": "Salad Days","Artist": "Mac Demarco","Album": "Salad Days","Year": "2014"},
+		{"Title": "Grafiti On A Tuesday Night","Artist": "Neat Beats","Album": "Cosmic Surgery","Year": "2011"},
+		{"Title": "Space Walk","Artist": "Lemon Jelly","Album": "Lost Horizons","Year": "2002"},	
+		{"Title": "Walkie Talkie","Artist": "Palm","Album": "Shadow Expert","Year": "2017"},
+		{"Title": "Smells Like Content","Artist": "The Books","Album": "Lost and Safe","Year": "2011"}
+		];
+</script>
+</head>
+<body>
+	<h1> Nick's Spotify Top 5 </h1>
+	<table id = music>
+			<tr>
+				<th>Title</th>
+				<th>Artist</th>
+				<th>Album</th>
+				<th>Year</th>
+			</tr>
+		
+	</table>
+	<script>
+		document.write("<table border=1>")
+  for (row=1; row<=songs.length; row++) {
+     document.write("<tr>")
+     for (col=1; col<=4; col++) {
+           document.write("<td>" + songs[row] + "<br>" + songs[col] + "</td>")
+      }
+      document.write("</tr>")
+ }
+ document.write("</table>")
+	</script>
+</body>
+</html>
