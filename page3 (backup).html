@@ -70,44 +70,23 @@
 		mm = String(total).split(".")
 		minute = Number(mm[0])
 		intsecond = (Number(mm[1]) * 60)
-		second = String(intsecond).slice(0,2)
+		second = String(intsecond).slice(0,1)
 		totalduration = String(minute + ":" + second)
 		return totalduration;
 }
 	function numartists(){
-		var counter = 0
-		var regulararray = []
+		var dictionary = []
 		for(i = 0; i < songs.length; i++){
-		if (regulararray.includes(songs[i].Artist)){
-			counter += 0;
-		}
-		else{
-			counter += 1;
-		}
-		regulararray.push(songs[i].Artist)
-		}
-		return counter
+			if(dictionary.includes(songs[i].Artist)){
+				dictionary[songs[i].Artist] += 1
+			}
+			else{
+			dictionary.push({key: songs[i].Artist, value:1});
 	}
-	function numsongs(){
-		var songcounter = 0
-		for (i = 0; i < songs.length; i++){
-			songcounter++
 		}
-		return songcounter;
+		console.log(dictionary)
 	}
- 	var stats = [
-{Numofsongs: numsongs(), Numofart: numartists(), totaldur: playlistduration()}
- 	];
- 	var statstuff = '<tbody>'
-   for(i = 0; i < stats.length; i++){
-        statstuff += '<tr>';
-        statstuff += '<td>' + stats[i].Numofsongs + '</td>';
-        statstuff += '<td>' + stats[i].Numofart + '</td>';
-        statstuff += '<td>' + stats[i].totaldur+ '</td>';
-        statstuff+= '</tr>';
-    }
-    statstuff +='</tbody>';
-    document.getElementById('statsdata').innerHTML = statstuff;
+numartists();
 	</script>
 </body>
 </html> 
